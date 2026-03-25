@@ -1,0 +1,11 @@
+{
+  "auth": {
+    "identityProviders": {
+      "azureActiveDirectory": {
+        "registration": {
+          "openIdIssuer": "https://<tenant>.ciamlogin.com"
+        }
+      }
+    }
+  }
+}

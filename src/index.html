@@ -1,17 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FSRA Portal</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #ffffff;
+            color: #333;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 80px auto;
+            text-align: center;
+        }
+
+        .logo {
+            margin-bottom: 10px;
+        }
+
+        .portal-title {
+            font-size: 20px;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        .form-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 12px rgba(0,0,0,0.1);
+        }
+
+        input {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .sign-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #0b4c6a;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .sign-btn:hover {
+            background-color: #083a52;
+        }
+
+        .links {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .links a {
+            color: #0b4c6a;
+            display: block;
+        }
+
+        .footer {
+            margin-top: 80px;
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+        }
+    </style>
+
+    https://alcdn.msauth.net/browser/2.25.0/js/msal-browser.min.js
 </head>
 
 <body>
-  <main>
-    <h1>Vanilla JavaScript App</h1>
-  </main>
-</body>
 
+    <div class="container">
+        your-logo.png
+
+        <div class="portal-title">FSRA Portal</div>
+
+        <div class="form-box">
+            <!-- Cosmetic fields to match your current UI -->
+            <input type="email" placeholder="Email" id="emailFake" autocomplete="off" />
+            <input type="password" placeholder="Password" id="passFake" autocomplete="off" />
+
+            <button class="sign-btn" id="signinBtn">Sign In</button>
+
+            <div class="links">
+                #Forgot Password</a>
+                #Reset Password</a>
+            </div>
+        </div>
+    </div>
+
+    https://your-portal.azurestaticapps.net/portal.js"></script>
+
+    <div class="footer">
+        © 2026 Your Organization. All Rights Reserved.
+    </div>
+
+</body>
 </html>

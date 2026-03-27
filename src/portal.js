@@ -1,60 +1,25 @@
-//-----------------------------------------------------
-// MSAL CONFIGURATION
-//-----------------------------------------------------
 const msalConfig = {
-    auth: {
-        clientId: "819838783674-0uq5tbe16f65i4mcujh02l1el1cklj22.apps.googleusercontent.com",
-        authority: "https://pkspss.ciamlogin.com/2a36f934-d891-484f-8d86-4593d52494a9/v2.0",
-        redirectUri: "https://adgmstaticwebapp.azurestaticapps.net"
-    },
-    cache: {
-        cacheLocation: "sessionStorage",
-        storeAuthStateInCookie: false
-    }
-};
-
-const loginRequest = {
-    scopes: ["openid", "profile", "offline_access"]
-    // Add API scope once your API is ready:
-    // scopes: ["api://<API-APP-ID>/user_impersonation"]
+  auth: {
+    clientId: "PASTE-CLIENT-ID-HERE",
+    authority: "https://PASTE-TENANT-NAME.ciamlogin.com/PASTE-TENANT-ID/v2.0",
+    redirectUri: window.location.origin
+  },
+  cache: {
+    cacheLocation: "sessionStorage"
+  }
 };
 
 const msalInstance = new msal.PublicClientApplication(msalConfig);
 
-//-----------------------------------------------------
-// SIGN-IN BUTTON TRIGGER
-//-----------------------------------------------------
-document.getElementById("signinBtn").onclick = async () => {
-    // Ignore fake Email/Password fields — External ID handles real auth
-    msalInstance.loginRedirect(loginRequest);
+document.getElementById("signinBtn").onclick = () => {
+  msalInstance.loginRedirect({
+    scopes: ["openid", "profile"]
+  });
 };
 
-//-----------------------------------------------------
-// HANDLE REDIRECT RESPONSE
-//-----------------------------------------------------
-msalInstance.handleRedirectPromise().then((response) => {
-    if (response !== null) {
-        console.log("User logged in successfully:", response.account);
-        // TODO: Redirect to upload page, or show dashboard
-    }
-}).catch((error) => {
-    console.error(error);
-});
-
-//-----------------------------------------------------
-// GET TOKEN FOR API CALLS
-//-----------------------------------------------------
-async function getAccessToken() {
-    const accounts = msalInstance.getAllAccounts();
-    if (accounts.length === 0) return null;
-
-    try {
-        const tokenResponse = await msalInstance.acquireTokenSilent({
-            ...loginRequest,
-            account: accounts[0]
-        });
-        return tokenResponse.accessToken;
-    } catch (err) {
-        return msalInstance.acquireTokenRedirect(loginRequest);
-    }
-}
+msalInstance.handleRedirectPromise().then(response => {
+  if (response && response.account) {
+    document.body.innerHTML =
+      "<h2 style='text-align:center;margin-top:30px'>✅ Authentication Successful</h2>";
+  }
+}).catch(console.error);

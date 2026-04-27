@@ -1,6 +1,6 @@
 const msalConfig = {
   auth: {
-    clientId: "PASTE-YOUR-CLIENT-ID-HERE",
+    clientId: "56a695df-9e09-40d4-86af-8472a432eb84",
     authority: "https://pkspss.ciamlogin.com/2a36f934-d891-484f-8d86-4593d52494a9/v2.0",
     redirectUri: window.location.origin
   },

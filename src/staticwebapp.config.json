@@ -3,9 +3,10 @@
     "identityProviders": {
       "azureActiveDirectory": {
         "registration": {
-          "openIdIssuer": "https://<tenant>.ciamlogin.com"
+          "openIdIssuer": "https://pkspss.ciamlogin.com/2a36f934-d891-484f-8d86-4593d52494a9/v2.0"
         }
       }
     }
   }
 }
+``

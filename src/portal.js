@@ -1,7 +1,7 @@
 const msalConfig = {
   auth: {
     clientId: "PASTE-YOUR-CLIENT-ID-HERE",
-    authority: "https://PASTE-TENANT.ciamlogin.com/PASTE-TENANT-ID/v2.0",
+    authority: "https://pkspss.ciamlogin.com/2a36f934-d891-484f-8d86-4593d52494a9/v2.0",
     redirectUri: window.location.origin
   },
   cache: {
